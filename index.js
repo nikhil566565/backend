@@ -5,14 +5,14 @@ const EmployeeModel = require('./models/Employee')
 const bcrypt = require("bcryptjs");
 const foodRoutes = require("./routes/foodRoutes"); // Import food routes
 
-// require('dotenv').config()
+require('dotenv').config()
 // const jwt = require("jsonwebtoken");
 
 const app = express();
 app.use(express.json());
 app.use(cors())
 
-mongoose.connect("mongodb+srv://nikhilkumawat7689:nikhilkumawat7689@cluster0.euhw9.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0", {
+mongoose.connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
