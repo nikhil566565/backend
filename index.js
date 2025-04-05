@@ -4,7 +4,7 @@ const cors = require("cors")
 const EmployeeModel = require('./models/Employee')
 const bcrypt = require("bcryptjs");
 const foodRoutes = require("./routes/foodRoutes"); // Import food routes
-
+const port = process.env.PORT || 4000;
 require('dotenv').config()
 // const jwt = require("jsonwebtoken");
 
@@ -111,4 +111,4 @@ app.put("/update_password", async (req, res) => {
 
 // Register Food Routes
 app.use("/api", foodRoutes);
-app.listen(5000, () => console.log("Server running on port 5000"));
+app.listen(port, () => console.log("Server running on port 5000"));
